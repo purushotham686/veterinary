@@ -1,0 +1,27 @@
+<%= form_for(@appointment) do |f| %>
+
+  <div class="field">
+    <%= f.label :customer_name %> : 
+    <%= @appointment.customer.name %>
+  </div>
+  <div class="field">
+    <%= f.label :pet_type %><br>
+    <%= f.text_field :pet_type %>
+  </div>
+  <div class="field">
+    <%= f.label :breed %><br>
+    <%= f.text_field :breed %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <%= hidden_field_tag 'redirect', 'doctors' %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

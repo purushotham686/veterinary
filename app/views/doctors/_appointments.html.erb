@@ -1,0 +1,26 @@
+<h3>Listing appointments</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Date of visit</th>
+      <th>Pet</th>
+      <th>Reminder</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctor.appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.customer.name %></td>
+        <td><%= appointment.date_of_visit %></td>
+        <td><%= appointment.pet %></td>
+        <td><%= appointment.requires_reminder_of_appointment %></td>
+        <td><%= link_to 'Add / Edit Pet Info',  add_or_edit_pet_information_doctor_path(appointment) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

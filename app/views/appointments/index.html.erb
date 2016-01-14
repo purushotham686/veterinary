@@ -1,0 +1,35 @@
+<h1>Listing appointments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Doctor</th>
+      <th>Customer</th>
+      <th>Date of visit</th>
+      <th>Pet</th>
+      <th>Requires reminder of appointment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.doctor_id %></td>
+        <td><%= appointment.customer_id %></td>
+        <td><%= appointment.date_of_visit %></td>
+        <td><%= appointment.pet %></td>
+        <td><%= appointment.requires_reminder_of_appointment %></td>
+        <td><%= link_to 'Show', appointment %></td>
+        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Appointment', new_appointment_path %>
